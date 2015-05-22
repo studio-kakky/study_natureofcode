@@ -32,15 +32,32 @@ gulp.task("build:lib",function(){
         .pipe(gulp.dest('dist/js'));
 })
 
-gulp.task("build",["clean:script"],function(){
-    return gulp.src(['src/**/*.js'])
+gulp.task("build:class",function(){
+    return gulp.src(['src/classes/**/*.js'])
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
         .pipe(gulpif(!isProd,sourcemaps.init()))
         .pipe(babel())
-        .pipe(concat('all.js'))
+        .pipe(concat('classes.js'))
         .pipe(gulpif(!isProd,sourcemaps.write('.')))
-        .pipe(gulp.dest('dist/js/'))
+        .pipe(gulp.dest('dist/js/classes'))
         .pipe(reload({stream:true}));
+})
+
+gulp.task("build:page",function(){
+    return gulp.src(['src/pages/**/*.js'])
+        .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        .pipe(gulpif(!isProd,sourcemaps.init()))
+        .pipe(babel())
+        .pipe(gulpif(!isProd,sourcemaps.write('.')))
+        .pipe(gulp.dest('dist/js/pages'))
+        .pipe(reload({stream:true}));
+})
+
+gulp.task("build",function(){
+    runSequence(
+        "clean:script",
+        ["build:lib","build:class","build:page"]
+    )
 })
 
 gulp.task('browser-sync', function() {
@@ -56,4 +73,4 @@ gulp.task('watch',function(){
     gulp.watch(['./src/**/*.js'],["build"]);
 });
 
-gulp.task("default",["build:lib","build",'browser-sync',"watch"]);
+gulp.task("default",["build",'browser-sync',"watch"]);
