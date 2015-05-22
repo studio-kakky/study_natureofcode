@@ -1,5 +1,5 @@
 class RandomWalk2 extends RandomWalk{
-  consotructor(initx,inity){
+  constructor(initx,inity){
     super(initx,inity);
   }
   step(){
