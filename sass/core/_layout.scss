@@ -1,0 +1,11 @@
+body {
+	color:$base-color;
+	font-size:14px;
+}
+
+a {
+	color:$anchor-link;
+	&:hover{
+		color:$anchor-hover;
+	}
+}

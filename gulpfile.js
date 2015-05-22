@@ -14,6 +14,7 @@ var notify = require("gulp-notify");
 var shell = require('gulp-shell');
 var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
+var sass = require('gulp-sass');
 
 var isProd = false;
 
@@ -53,12 +54,24 @@ gulp.task("build:page",function(){
         .pipe(reload({stream:true}));
 })
 
-gulp.task("build",function(){
+gulp.task("build:js",["clean:script"],function(){
     runSequence(
-        "clean:script",
         ["build:lib","build:class","build:page"]
     )
 })
+
+gulp.task("clean:css",function(callback){
+    del(['dist/css']);
+    setTimeout(function(){ callback() },100);
+})
+
+gulp.task("build:css",["clean:css"],function(){
+  return gulp.src(['sass/base.scss'])
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css/'))
+    .pipe(reload({stream:true}));
+})
+
 
 gulp.task('browser-sync', function() {
     browserSync({
@@ -69,8 +82,14 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch',function(){
+gulp.task('watch:js',function(){
     gulp.watch(['./src/**/*.js'],["build"]);
 });
 
-gulp.task("default",["build",'browser-sync',"watch"]);
+gulp.task('watch:css',function(){
+    gulp.watch(['./sass/**/*.scss'],["build:css"]);
+});
+
+gulp.task("build",["build:js","build:css"]);
+
+gulp.task("default",["build",'browser-sync',"watch:js","watch:css"]);

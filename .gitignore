@@ -7,3 +7,6 @@ node_modules
 # third party vendor liblaries
 vendor/*
 
+# sasscach
+.sass-cache
+

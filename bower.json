@@ -3,5 +3,9 @@
   "description": "Nature of Codeの独習",
   "dependencies": {
     "p5js": "~0.4.4"
+  },
+  "devDependencies": {
+    "bourbon": "~4.2.3",
+    "modularized-normalize-scss": "~3.0.3"
   }
 }
