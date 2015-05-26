@@ -21,7 +21,7 @@ var RandomWalk = (function () {
     },
     step: {
       value: function step() {
-        var choice = parseInt(random() * 4);
+        var choice = parseInt(Math.random() * 4);
 
         if (choice === 0) {
           this.x++;
@@ -60,8 +60,8 @@ var RandomWalk2 = (function (_RandomWalk) {
   _createClass(RandomWalk2, {
     step: {
       value: function step() {
-        var stepx = parseInt(random(3)) - 1;
-        var stepy = parseInt(random(3)) - 1;
+        var stepx = parseInt(Math.random() * 3) - 1;
+        var stepy = parseInt(Math.random() * 3) - 1;
 
         this.x += stepx;
         this.y += stepy;

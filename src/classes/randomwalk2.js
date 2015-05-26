@@ -3,8 +3,8 @@ class RandomWalk2 extends RandomWalk{
     super(initx,inity);
   }
   step(){
-    var stepx = parseInt( random(3) ) - 1;
-    var stepy = parseInt( random(3) ) - 1;
+    var stepx = parseInt( Math.random()*3 ) - 1;
+    var stepy = parseInt( Math.random()*3 ) - 1;
 
     this.x += stepx;
     this.y += stepy;

@@ -10,7 +10,7 @@ class RandomWalk {
   }
 
   step(){
-    var choice = parseInt( random()*4 );
+    var choice = parseInt( Math.random()*4 );
 
     if( choice === 0){
       this.x++;
