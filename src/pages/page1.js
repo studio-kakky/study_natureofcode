@@ -2,7 +2,7 @@ var w;
 
 function setup(){
   createCanvas(640,360);
-  w = new RandomWalk(320,180);
+  w = new RandomWalk(width/2,height/2);
   background(255);
 }
 
