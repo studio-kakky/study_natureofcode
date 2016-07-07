@@ -39,7 +39,7 @@ gulp.task("clean",function(callback){
  */
 
 gulp.task("build:lib",function(){
-  return gulp.src(["node_modules/p5/lib/p5.min.js"])
+  return gulp.src(["node_modules/p5/lib/p5.min.js","node_modules/lodash/lodash.min.js"])
     .pipe(concat("lib.js"))
     .pipe(gulp.dest(distDir + '/scripts/'));
 })
@@ -51,8 +51,7 @@ gulp.task("build:class",function(cb){
     .pipe(babel())
     .pipe(concat('classes.js'))
     .pipe(gulpif(!isProd,sourcemaps.write('.')))
-    .pipe(gulp.dest(distDir + '/scripts/'))
-    .pipe(reload({stream:true}),cb);
+    .pipe(gulp.dest(distDir + '/scripts/'),cb)
 })
 
 gulp.task("build:article",function(cb){
@@ -61,14 +60,22 @@ gulp.task("build:article",function(cb){
     .pipe(gulpif(!isProd,sourcemaps.init()))
     .pipe(babel())
     .pipe(gulpif(!isProd,sourcemaps.write('.')))
-    .pipe(gulp.dest(distDir + '/scripts/articles'))
-    .pipe(reload({stream:true}),cb);
+    .pipe(gulp.dest(distDir + '/scripts/articles'),cb)
+})
+
+gulp.task("build:index",function(cb){
+  return gulp.src(["node_modules/lodash/lodash.min.js",'src/scripts/index/**/*.js'])
+    .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+    .pipe(gulpif(!isProd,sourcemaps.init()))
+    .pipe(concat('index.js'))
+    .pipe(gulpif(!isProd,sourcemaps.write('.')))
+    .pipe(gulp.dest(distDir + '/scripts/'),cb)
 })
 
 
 gulp.task("build:js",function(cb){
     runSequence(
-        ["build:lib","build:class","build:article"]
+        ["build:lib","build:class","build:article","build:index"]
         ,cb
     )
 })
@@ -78,11 +85,10 @@ gulp.task("build:js",function(cb){
  *
  */
 
-gulp.task("build:css",function(){
+gulp.task("build:css",function(cb){
   return gulp.src(['sass/base.scss'])
     .pipe(sass())
-    .pipe(gulp.dest(distDir + '/css/'))
-    .pipe(reload({stream:true}));
+    .pipe(gulp.dest(distDir + '/css/'),cb)
 })
 
 /*
@@ -143,15 +149,15 @@ gulp.task('browser-sync', function() {
  */
 
 gulp.task('watch:js',function(){
-    gulp.watch(['./src/**/*.js'],["build:js"]);
+  return gulp.watch(['./src/**/*.js'],["build:js"]);
 });
 
 gulp.task('watch:css',function(){
-    gulp.watch(['./sass/**/*.scss'],["build:css"]);
+  return gulp.watch(['./sass/**/*.scss'],["build:css"]);
 });
 
 gulp.task('watch:html',function(){
-    gulp.watch(['./src/**/*.ejs'],["build:html"]);
+  return gulp.watch(['./src/html/**/*.ejs'],["build:html"]);
 });
 
 /*

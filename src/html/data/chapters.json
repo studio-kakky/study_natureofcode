@@ -4,22 +4,22 @@
     "chapterNum":"1",
     "articles":[
       {
-        "name":"Random Walk",
+        "name":"1pxずつ進むランダムウォーク",
         "description":"",
         "script":"scripts/articles/chapter1_1.js"
       },
       {
-        "name":"Random Walk2",
+        "name":"進む距離もランダムなランダムウォーク",
         "description":"",
         "script":"scripts/articles/chapter1_2.js"
       },
       {
-        "name":"Random Walk3",
+        "name":"右下に進む傾向のあるランダムウォーク",
         "description":"",
         "script":"scripts/articles/chapter1_3.js"
       },
       {
-        "name":"Random Walk4",
+        "name":"マウスに追随するランダムウォーク",
         "description":"",
         "script":"scripts/articles/chapter1_4.js"
       }
