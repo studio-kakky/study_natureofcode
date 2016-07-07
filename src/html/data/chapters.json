@@ -1,0 +1,28 @@
+[
+  {
+    "chapter":"1.ベクトル",
+    "chapterNum":"1",
+    "articles":[
+      {
+        "name":"Random Walk",
+        "description":"",
+        "script":"scripts/articles/chapter1_1.js"
+      },
+      {
+        "name":"Random Walk2",
+        "description":"",
+        "script":"scripts/articles/chapter1_2.js"
+      },
+      {
+        "name":"Random Walk3",
+        "description":"",
+        "script":"scripts/articles/chapter1_3.js"
+      },
+      {
+        "name":"Random Walk4",
+        "description":"",
+        "script":"scripts/articles/chapter1_4.js"
+      }
+    ]
+  }
+]
