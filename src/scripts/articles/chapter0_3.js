@@ -10,3 +10,6 @@ function draw(){
   w.step();
   w.display();
 }
+
+function mouseClicked() {
+}

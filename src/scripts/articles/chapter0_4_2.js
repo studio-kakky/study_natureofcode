@@ -7,7 +7,6 @@ function setup(){
 }
 
 function mouseClicked() {
-  console.log(mouseX,mouseY);
   p.paint(mouseX,mouseY);
 }
 
