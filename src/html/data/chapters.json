@@ -26,7 +26,12 @@
       {
         "name":"ガウス分布の○",
         "description":"",
-        "script":"scripts/articles/chapter0_5.js"
+        "script":"scripts/articles/chapter0_4.js"
+      },
+      {
+        "name":"ペンキ",
+        "description":"",
+        "script":"scripts/articles/chapter0_4_2.js"
       }
     ]
   }
