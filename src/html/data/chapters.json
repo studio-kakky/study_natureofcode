@@ -1,27 +1,32 @@
 [
   {
-    "chapter":"1.ベクトル",
-    "chapterNum":"1",
+    "chapter":"0.はじめに",
+    "chapterNum":"0",
     "articles":[
       {
         "name":"1pxずつ進むランダムウォーク",
         "description":"",
-        "script":"scripts/articles/chapter1_1.js"
+        "script":"scripts/articles/chapter0_1.js"
       },
       {
         "name":"進む距離もランダムなランダムウォーク",
         "description":"",
-        "script":"scripts/articles/chapter1_2.js"
+        "script":"scripts/articles/chapter0_2.js"
       },
       {
         "name":"右下に進む傾向のあるランダムウォーク",
         "description":"",
-        "script":"scripts/articles/chapter1_3.js"
+        "script":"scripts/articles/chapter0_3.js"
       },
       {
         "name":"マウスに追随するランダムウォーク",
         "description":"",
-        "script":"scripts/articles/chapter1_4.js"
+        "script":"scripts/articles/chapter0_3_2.js"
+      },
+      {
+        "name":"ガウス分布の○",
+        "description":"",
+        "script":"scripts/articles/chapter0_5.js"
       }
     ]
   }
