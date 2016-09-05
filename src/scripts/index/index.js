@@ -16,21 +16,7 @@ NOF.ChapterBtns = function(){
 
 NOF.OnClickArticleBtn = function(e) {
   e.preventDefault();
-
-  if(NOF.request) NOF.request.abort();
-
-  NOF.request = new XMLHttpRequest();
-  NOF.request.open('GET', this.href, true);
-  NOF.request.onreadystatechange = function(){
-    if(NOF.request.readyState === 4 && NOF.request.status === 200) {
-      if(!NOF.canvas) NOF.canvas = document.getElementsByClassName('mod-main__canvas')[0];
-      var idoc =  NOF.canvas.contentWindow.document;
-      idoc.open();
-      idoc.write(NOF.request.responseText);
-      idoc.close();
-    }
-  }
-  NOF.request.send();
+  document.getElementsByClassName('mod-main__canvas')[0].src = this.href;
 }
 
 NOF.ArticleBtns = function(){
