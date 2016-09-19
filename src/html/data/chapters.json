@@ -49,14 +49,34 @@
         "script":"scripts/articles/chapter0_6_2.js"
       },
       {
-        "name":"パーリンノイズのランダムウォーク",
+        "name":"パーリンノイズのランダムウォーク1",
         "description":"",
         "script":"scripts/articles/chapter0_6_3.js"
       },
       {
-        "name":"パーリンノイズのランダムウォーク",
+        "name":"パーリンノイズのランダムウォーク2",
         "description":"",
         "script":"scripts/articles/chapter0_6_4.js"
+      },
+      {
+        "name":"ランダムによる彩色",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_5.js"
+      },
+      {
+        "name":"パーリンノイズによる彩色1",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_6.js"
+      },
+      {
+        "name":"パーリンノイズによる煙のアニメーション",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_7.js"
+      },
+      {
+        "name":"パーリンノイズによる地形",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_8.js"
       }
     ]
   }

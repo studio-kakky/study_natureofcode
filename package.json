@@ -35,7 +35,7 @@
     "gulp-watch": "^4.1.1",
     "lodash": "^4.13.1",
     "normalize.scss": "^0.1.0",
-    "p5": "^0.5.2",
+    "p5": "^0.5.3",
     "run-sequence": "^1.0.2"
   },
   "private": true
