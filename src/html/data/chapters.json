@@ -32,6 +32,11 @@
         "name":"ペンキ",
         "description":"",
         "script":"scripts/articles/chapter0_4_2.js"
+      },
+      {
+        "name":"カスタム分布する円",
+        "description":"",
+        "script":"scripts/articles/chapter0_5_1.js"
       }
     ]
   }
