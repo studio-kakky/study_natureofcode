@@ -44,9 +44,19 @@
         "script":"scripts/articles/chapter0_6_1.js"
       },
       {
-        "name":"パリンノイズのグラフ",
+        "name":"パーリンノイズのグラフ",
         "description":"",
         "script":"scripts/articles/chapter0_6_2.js"
+      },
+      {
+        "name":"パーリンノイズのランダムウォーク",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_3.js"
+      },
+      {
+        "name":"パーリンノイズのランダムウォーク",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_4.js"
       }
     ]
   }
