@@ -1,9 +1,0 @@
-<div class="mod-chapters">
-  <% chapters.forEach(function(chapter){ %>
-    <div class="mod-chapters__item">
-      <h3 class="mod-chapters__item__h"><%= chapter.chapter %></h3>
-      <%- include('_mod-articles', {
-        articles:chapter.articles,
-        chapterNum:chapter.chapterNum
-      }) %></div><% }); %>
-</div>
