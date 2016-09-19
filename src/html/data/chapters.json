@@ -37,6 +37,16 @@
         "name":"カスタム分布する円",
         "description":"",
         "script":"scripts/articles/chapter0_5_1.js"
+      },
+      {
+        "name":"ランダムなグラフ",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_1.js"
+      },
+      {
+        "name":"パリンノイズのグラフ",
+        "description":"",
+        "script":"scripts/articles/chapter0_6_2.js"
       }
     ]
   }
